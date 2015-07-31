@@ -15,7 +15,7 @@ Requirefix extends Node's built-in `require()` function with an extra behaviour.
 
 ## Usage
 
-Add it to your application's main module and forget your project's naming conventions. 
+Add it to your application's main module to override `module.require()` globally. 
 
 ```js
 
