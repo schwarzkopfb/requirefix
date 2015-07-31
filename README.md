@@ -15,7 +15,7 @@ Requirefix extends Node's built-in `require()` function with an extra behaviour.
 
 ## Usage
 
-Add it to your application's main module to override `module.require()` globally. 
+Add it to your application's main module to override `module.require()` globally: 
 
 ```js
 
@@ -75,7 +75,7 @@ var myCompiledModule = require('./lib/myCompiledModule')
 
 ```
 
-For more information see the `[examples](https://github.com/schwarzkopfb/requirefix/blob/master/)` folder.
+For more information see the [examples](https://github.com/schwarzkopfb/requirefix/blob/master/).
 
 ## Installation
 
