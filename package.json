@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mochajs/mocha.git"
+    "url": "git+https://github.com/schwarzkopfb/requirefix.git"
   },
   "keywords": [
     "require",
     "prefix",
     "postfix"
   ],
-  "author": "Schwarzkopf Balazs",
+  "author": "Schwarzkopf Balázs <schwarzkopfb@icloud.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mochajs/mocha/issues"
+    "url": "https://github.com/schwarzkopfb/requirefix/issues"
   },
-  "homepage": "https://github.com/mochajs/mocha#readme"
+  "homepage": "https://github.com/schwarzkopfb/requirefix#readme"
 }

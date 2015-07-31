@@ -19,9 +19,7 @@ Add it to your application's main module and forget your project's naming conven
 
 ```js
 
-var rfx = require('requirefix') // overrides module.require()
-
-rfx.postfix = '-compiled' // set the desired postfix
+require('requirefix').postfix = '-compiled' // override module.require() and set the desired postfix in one line
 
 // here we're using requirefix() instead of the original module.require()
 // try to load './myCompiledModule-compiled.js' and './myCompiledModule.js'
@@ -46,7 +44,7 @@ var myCompiledModule = require('./myCompiledModule')
 
 ```
 
-You can specify multiple postfixes at the same time and you can initialize it in only one line:
+You can specify multiple postfixes at the same time:
 
 ```js
 
@@ -77,7 +75,7 @@ var myCompiledModule = require('./lib/myCompiledModule')
 
 ```
 
-For more information see the `examples` folder.
+For more information see the `[examples](https://github.com/schwarzkopfb/requirefix/blob/master/)` folder.
 
 ## Installation
 
@@ -86,7 +84,7 @@ With npm:
     
 ## Performance
 
-Requirefix adds minimal, hardly measurable overhead to the module-loading process.
+Requirefix adds minimal and hardly measurable overhead to the module-loading process.
 
 ## License ##
 
