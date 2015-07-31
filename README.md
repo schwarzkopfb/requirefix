@@ -1,4 +1,4 @@
-# Requirefix #
+# Requirefix
 
 ## What's Requirefix?
 
@@ -80,12 +80,19 @@ For more information see the `[examples](https://github.com/schwarzkopfb/require
 ## Installation
 
 With npm:
+
     npm --save i requirefix
+    
+With git:
+    
+    git clone git://github.com/schwarzkopfb/requirefix.git
+    cd requirefix
+    npm test
     
 ## Performance
 
 Requirefix adds minimal and hardly measurable overhead to the module-loading process.
 
-## License ##
+## License
 
 [MIT license](LICENSE).
