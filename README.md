@@ -75,7 +75,7 @@ var myCompiledModule = require('./lib/myCompiledModule')
 
 ```
 
-For more information see the [examples](https://github.com/schwarzkopfb/requirefix/blob/master/).
+For more information see the [examples](https://github.com/schwarzkopfb/requirefix/blob/master/examples).
 
 ## Installation
 
@@ -95,4 +95,4 @@ Requirefix adds minimal and hardly measurable overhead to the module-loading pro
 
 ## License
 
-[MIT license](LICENSE).
+[MIT license](https://github.com/schwarzkopfb/requirefix/blob/master/LICENSE).
