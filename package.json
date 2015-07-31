@@ -1,6 +1,6 @@
 {
   "name": "requirefix",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A lightweight extension for Node.js's require() function. This extension allows you to load a module with its automatically pre- and/or post fixed name.",
   "main": "index.js",
   "scripts": {

@@ -81,13 +81,17 @@ For more information see the [examples](https://github.com/schwarzkopfb/requiref
 
 With npm:
 
-    npm --save i requirefix
+    npm install --save requirefix
     
 With git:
     
     git clone git://github.com/schwarzkopfb/requirefix.git
     cd requirefix
     npm test
+    
+## Will Requrefix break my dependencies?
+
+Requrefix leaves native and locally installed modules alone. If you use Requrefix to load one of Node's built-in modules or a package from the `node_modules` folder, Requirefix won't mess with it.
     
 ## Performance
 
