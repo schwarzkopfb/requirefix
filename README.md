@@ -27,7 +27,7 @@ var myCompiledModule = require('./myCompiledModule')
 
 ```
 
-If you don't want to override `module.require()` globally, but you want yo use it as a drop in replacement, that's not a problem:
+If you don't want to override `module.require()` globally, but you want to use it as a drop in replacement, that's not a problem:
  
 ```js
 
