@@ -34,21 +34,23 @@ function requirefix(context, moduleNameOrPath, overridePrefixes, overridePostfix
 
         try {
             if (!ext) {
-                var modulePath = path.resolve(path.dirname(context.filename) + '/' + moduleNameOrPath)
+                var found, modulePath = path.resolve(path.dirname(context.filename) + '/' + moduleNameOrPath)
 
                 // check all the registered file extensions first
 
                 for(var extension in Module._extensions)
                     if(Module._extensions.hasOwnProperty(extension))
                         try {
-                            if(fs.statSync(modulePath).isFile())
-                                return // prefer file against directory if exists
+                            if(fs.statSync(modulePath + extension).isFile()) {
+                                found = true
+                                break // prefer file against directory if exists
+                            }
                         }
                         catch(ex) {}
 
                 // if no file found, then check directory
 
-                if(fs.statSync(modulePath).isDirectory())
+                if(!found && fs.statSync(modulePath).isDirectory())
                     moduleNameOrPath += (moduleNameOrPath[moduleNameOrPath.length - 1] === '/' ? '' : '/') + 'index'
             }
         }
