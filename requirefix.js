@@ -2,7 +2,9 @@
  * Created by schwarzkopfb on 15/7/24.
  */
 
-var dropIn    = false,
+var fs        = require('fs'),
+    path      = require('path'),
+    dropIn    = false,
     prefixes  = [],
     postfixes = [],
     Module    = require('module'),
@@ -28,8 +30,10 @@ function requirefix(context, moduleNameOrPath, overridePrefixes, overridePostfix
 
     if(m === '../' || (m = m.substring(0, 2)) === './') {
         var i, j, l, l2, s, f,
-            path = _require('path'),
-            ext  = path.extname(moduleNameOrPath)
+            ext = path.extname(moduleNameOrPath)
+
+        if(!ext && fs.statSync(moduleNameOrPath).isDirectory())
+            moduleNameOrPath += '/index'
 
         if(ext in Module._extensions)
             moduleNameOrPath = path.dirname(moduleNameOrPath) + '/' + path.basename(moduleNameOrPath, ext)
