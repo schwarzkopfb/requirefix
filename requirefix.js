@@ -32,29 +32,29 @@ function requirefix(context, moduleNameOrPath, overridePrefixes, overridePostfix
         var i, j, l, l2, s, f,
             ext = path.extname(moduleNameOrPath)
 
-        try {
-            if (!ext) {
-                var found, modulePath = path.resolve(path.dirname(context.filename) + '/' + moduleNameOrPath)
+        if (!ext) {
+            var found, modulePath = path.resolve(path.dirname(context.filename) + '/' + moduleNameOrPath)
 
-                // check all the registered file extensions first
+            // check all the registered file extensions first
 
-                for(var extension in Module._extensions)
-                    if(Module._extensions.hasOwnProperty(extension))
-                        try {
-                            if(fs.statSync(modulePath + extension).isFile()) {
-                                found = true
-                                break // prefer file against directory if exists
-                            }
+            for(var extension in Module._extensions)
+                if(Module._extensions.hasOwnProperty(extension))
+                    try {
+                        if(fs.statSync(modulePath + extension).isFile()) {
+                            found = true
+                            break // prefer file against directory if exists
                         }
-                        catch(ex) {}
+                    }
+                    catch(ex) {}
 
-                // if no file found, then check directory
+            // if no file found, then check directory
 
-                if(!found && fs.statSync(modulePath).isDirectory())
-                    moduleNameOrPath += (moduleNameOrPath[moduleNameOrPath.length - 1] === '/' ? '' : '/') + 'index'
+            try {
+                if (!found && fs.statSync(modulePath).isDirectory())
+                    moduleNameOrPath += (moduleNameOrPath[ moduleNameOrPath.length - 1 ] === '/' ? '' : '/') + 'index'
             }
+            catch(ex) {}
         }
-        catch(ex) {}
 
         if(ext in Module._extensions)
             moduleNameOrPath = path.dirname(moduleNameOrPath) + '/' + path.basename(moduleNameOrPath, ext)
