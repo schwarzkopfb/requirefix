@@ -28,12 +28,15 @@ function requirefix(context, moduleNameOrPath, overridePrefixes, overridePostfix
     if(!Array.isArray(_postfixes))
         _postfixes = [ _postfixes ]
 
-    if(m === '../' || (m = m.substring(0, 2)) === './') {
+    if(m === '../' || (m = m.substring(0, 2)) === './' || (m === '..' && (m += '/')) || (m.length === 1 && m === '.' && (m += '/'))) {
         var i, j, l, l2, s, f,
             ext = path.extname(moduleNameOrPath)
 
-        if(!ext && fs.statSync(moduleNameOrPath).isDirectory())
-            moduleNameOrPath += '/index'
+        try {
+            if (!ext && fs.statSync(path.resolve(path.dirname(context.filename) + '/' + moduleNameOrPath)).isDirectory())
+                moduleNameOrPath += (moduleNameOrPath[moduleNameOrPath.length - 1] === '/' ? '' : '/') + 'index'
+        }
+        catch(ex) {}
 
         if(ext in Module._extensions)
             moduleNameOrPath = path.dirname(moduleNameOrPath) + '/' + path.basename(moduleNameOrPath, ext)

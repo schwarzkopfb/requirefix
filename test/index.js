@@ -3,7 +3,7 @@
  */
 
 var assert = require('assert'),
-    rfx    = require('../')
+    rfx    = require('..')
 
 assert(rfx instanceof Function, 'requirefix() must be a Function')
 
