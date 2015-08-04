@@ -15,10 +15,10 @@ rfx.postfix = '.min'
 require = rfx.bind(module)
 
 // here we're using requirefix() instead of the original module.require(),
-// so we can pass overridePrefix and overridePostfix arguments to override pre- and post fixing option per call
+// so we can pass overridePrefix and overridePostfix arguments to override pre- and post fixing options per call
 
-var t1 = require('../test/test1', null, '-compiled'), // loads '../test/test1-compiled.js'
-    t2 = require('../test'),                          // loads '../test/index.js'
-    t3 = require('../test/test1', null, '-compiled'), // loads '../test/test1-compiled.js'
-    t4 = require('../test/st1', 'te', '-compiled'),   // loads '../test/test1-compiled.js'
-    t5 = require('../test')                           // loads '../test/index.js'
+var t1 = require('../test/test1', null, '-compiled'), // try to load '../test/test1-compiled.js' and '../test/test1.js'
+    t2 = require('../test'),                          // try to load '../test/index.min.js' and '../test/index.js'
+    t3 = require('../test/test1', null, '-compiled'), // try to load '../test/test1-compiled.js' and '../test/test1.js'
+    t4 = require('../test/st1', 'te', [ '-compiled', '.min' ]),   // try to load '../test/test1-compiled.js', '../test/test1.compiled.js' and '../test/test1.js'
+    t5 = require('../test')                           // try to load '../test/index.min.js' and '../test/index.js'

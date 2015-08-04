@@ -13,6 +13,7 @@ require('../requirefix').postfix = [ '.min', '.compiled', '-compiled' ]
 // * '../test/test1.min.js'
 // * '../test/test1.compiled.js'
 // * '../test/test1-compiled.js'
+// * '../test/test1.js'
 
 require('../test/test1')
 
@@ -33,5 +34,7 @@ requirefix.prefix = [ 'a', 'b', 'te' ] // worth to mention requirefix also expos
 // * '../test/ast1-compiled.js'
 // * '../test/bst1-compiled.js'
 // * '../test/test1-compiled.js'
+//
+// * '../test/st1.js'
 
 require('../test/st1')
